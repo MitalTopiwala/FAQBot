@@ -2,25 +2,21 @@ import os
 import discord
 import re
 import pickle
+import random
 from dotenv import load_dotenv
-#from replit import db
-
 import nltk
 #nltk.download('punkt')
 #nltk.download('wordnet')
+
 from nltk.stem import WordNetLemmatizer
-#lemmatizer = WordNetLemmatizer()
 import numpy as np
 from keras.models import Sequential
-#from tensorflow.python.keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
-#from tensorflow.python.keras.layers import LSTM, Dense
-
 from keras.optimizers import SGD
-import random
+
 
 load_dotenv()
-#saved token as environment variable
+#NOTE: saved token as environment variable, update token in .env file
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
@@ -86,14 +82,12 @@ def make_training_set():
             output_row[classes.index(doc[1])] = 1
             training.append([pool, output_row])
             
-    #print(training)
-    #TODO: Fix line below, make it work 
+
+    #TODO: Fix line below 
     #training = np.array(random.shuffle(training))
     print(training)
     training_x = list(np.array(training).T[0]) #patterns
     training_y = list(np.array(training).T[1]) #intents
-    #training_x = list(training[:,0]) #patterns
-    #training_y = list(training[:,1]) #intents
     print("Training data created")
     return training_x, training_y
 
@@ -114,7 +108,6 @@ def train_model(x, y):
 
     #fitting and saving the model 
     m = MODEL.fit(np.array(x), np.array(y), epochs=200, batch_size=5, verbose=1)
-    #model.save('chatbot_model.h5', m)
 
     print("model created")
     return m
