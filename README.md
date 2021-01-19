@@ -4,7 +4,7 @@ A Discord bot that asnwers FAQs.
 
 ## Intro
 
-Whether its a student trying to locate the syllabus, or a novice gammer inquiring about game mechanics, in almost discord server, there are select questions that are repeatedly asked. I created the FAQBot to eliminate the need for users to repeatedly answer the same questions, and can instead rely on a bot to do it for them.
+Whether its a student trying to locate the syllabus, or a novice gammer inquiring about game mechanics, in almost discord server there are questions that are repeatedly asked. I created the FAQBot to eliminate the need for users to repeatedly answer the same questions, and can instead rely on a bot to do it for them.
 
 ## Requirements
 
