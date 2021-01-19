@@ -1,6 +1,6 @@
 # FAQBot
 
-A bot that asnwers FAQs.
+A Discord bot that asnwers FAQs.
 
 ## Intro
 
